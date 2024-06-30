@@ -43,17 +43,17 @@ export default function Footer() {
             </div>
           </div>
           <div className={styles["nav"]}>
-            <Link className="link" href="/">
-              раздел
+            <Link className="link" href="/News/141">
+              О нас
             </Link>
-            <Link className="link" href="/">
-              раздел
+            <Link className="link" href="/Search/allProducts">
+              Товары
             </Link>
-            <Link className="link" href="/">
-              раздел
+            <Link className="link" href="/Favourite">
+            Избранное
             </Link>
-            <Link className="link" href="/">
-              раздел
+            <Link className="link" href="/CartPage">
+              Корзина
             </Link>
           </div>
           <div className={styles["contact-social-media-container"]}>

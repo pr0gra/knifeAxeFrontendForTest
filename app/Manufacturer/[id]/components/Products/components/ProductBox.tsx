@@ -15,6 +15,9 @@ export interface IFavouriteProduct {
   name: string;
   images: { src: string }[];
   acf: {
+    extra_product1: number | boolean;
+    extra_product2: number | boolean;
+    extra_product3: number | boolean;
     ax_height: string;
     ax_weight: string;
     blade_hardness: string;

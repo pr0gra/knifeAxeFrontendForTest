@@ -7,6 +7,7 @@ import { IFavouriteProduct } from "../Manufacturer/[id]/components/Products/comp
 import { Navigation } from "../components/Navigation/Navigation";
 import Image from "next/image";
 import cross from "@/app/assets/icons/cross.png";
+import { SimilarProducts } from "./components/similarProducts/SimilarProducts";
 
 export default function Page() {
   const [cartData, setCartData] = useState(
@@ -49,9 +50,10 @@ export default function Page() {
     });
   }, [productsToBuy]);
   const getTotalPrice = () => {
-
     const totalCost = productsToBuy.reduce((acc, product) => {
-      const productData = cartData.find((item: any) => item.id === product.product_id);
+      const productData = cartData.find(
+        (item: any) => item.id === product.product_id
+      );
 
       if (productData) {
         const price = parseFloat(productData.price);
@@ -136,7 +138,7 @@ export default function Page() {
           <h2 className={styles["final-price"]}>
             Итого: {getTotalPrice()} руб.
           </h2>
-
+          <SimilarProducts />
           <h3 className={styles["h1"]}>Оформление заказа</h3>
           <form
             className={styles["form"]}

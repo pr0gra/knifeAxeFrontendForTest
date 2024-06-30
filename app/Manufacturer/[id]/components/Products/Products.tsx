@@ -7,7 +7,7 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 export function Products() {
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductsData] = useState<any>([]);
   const params = useParams<{ id: string }>();
 
   async function getProductsData() {
@@ -26,15 +26,15 @@ export function Products() {
   useEffect(() => {
     getProductsData();
   }, [params]);
-
   return (
     <div className={styles["body"]}>
       {/* <div className={styles["fog"]} /> */}
       <h2 className={styles["h2"]}>Товары</h2>
       <div className={styles["products-container"]}>
-        {productsData.map((product, index) => {
+
+        {productsData && productsData.products.length ? productsData?.products?.map((product:any, index:number) => {
           return <ProductBox product={product} key={index} />;
-        })}
+        }) : <p style={{color: "#fff"}}>Пока нет товаров</p>}
       </div>
       {/* <Navigation /> */}
     </div>

@@ -109,6 +109,10 @@
   font-size: 30px;
 }
 @media (max-width: 768px) {
+.container{
+  padding-left: 10px;
+  padding-right: 10px;
+}
   .cart-element-container {
     padding: 0 24px;
   }
