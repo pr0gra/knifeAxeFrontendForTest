@@ -28,7 +28,7 @@
 
 .h2 {
   font-family: stalinist;
-  font-size: clamp(15px, 5vw, 50px);
+  font-size: clamp(15px, 5vw, 30px);
   color: white;
 }
 
