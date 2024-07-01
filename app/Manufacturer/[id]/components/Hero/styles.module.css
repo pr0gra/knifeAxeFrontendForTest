@@ -3,7 +3,7 @@
   justify-content: space-between;
   gap: clamp(21.34px, 5vw, 132px);
   padding: 0px 20px;
-  padding-bottom: clamp(39px, 15vw, 232px);
+  padding-bottom: clamp(39px, 15vw, 100px);
   position: relative;
 }
 
