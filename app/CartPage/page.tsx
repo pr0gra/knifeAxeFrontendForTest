@@ -73,7 +73,7 @@ export default function Page() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            set_paid: false,
+            set_paid: true,
             customer_note: formData.comment,
             billing: {
               first_name: formData.fio,
