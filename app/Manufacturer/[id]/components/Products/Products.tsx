@@ -32,7 +32,7 @@ export function Products() {
       <h2 className={styles["h2"]}>Товары</h2>
       <div className={styles["products-container"]}>
 
-        {productsData && productsData.products.length ? productsData?.products?.map((product:any, index:number) => {
+        {productsData && productsData?.products?.length ? productsData?.products?.map((product:any, index:number) => {
           return <ProductBox product={product} key={index} />;
         }) : <p style={{color: "#fff"}}>Пока нет товаров</p>}
       </div>
