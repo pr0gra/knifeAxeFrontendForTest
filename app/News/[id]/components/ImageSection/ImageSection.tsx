@@ -10,12 +10,13 @@ interface IProps {
 
 export function ImageSection({ image = "" }: IProps) {
   return (
-    <Image
-      src={image}
-      alt="image"
-      width={1169}
-      height={457}
-      className={styles["image"]}
-    />
+    <div className={styles["image"]} style={{height: "500px", width: "100%", backgroundImage: `url("${image}")`}}></div>
+    // <Image
+    //   src={image}
+    //   alt="image"
+    //   width={1169}
+    //   height={457}
+    //   className={styles["image"]}
+    // />
   );
 }

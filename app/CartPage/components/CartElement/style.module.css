@@ -24,7 +24,6 @@
 .description-container {
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
 .description-container h3 {
   font-size: clamp(15px, 2vw, 30px);
