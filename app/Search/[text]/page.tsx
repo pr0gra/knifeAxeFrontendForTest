@@ -188,9 +188,13 @@ export default function Page() {
                 </div>
               </div>
 
-              {productsData?.map((product, index) => {
-                return <ProductBox product={product} key={index} />;
-              })}
+              {productsData.length ? (
+                productsData?.map((product, index) => {
+                  return <ProductBox product={product} key={index} />;
+                })
+              ) : (
+                <p style={{ color: "#fff" }}>Ничего не нашлось...</p>
+              )}
             </div>
             <div
               style={{
