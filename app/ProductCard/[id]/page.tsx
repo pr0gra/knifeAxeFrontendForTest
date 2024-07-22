@@ -36,6 +36,7 @@ export interface IProduct {
     ax_height: string;
     steel_hardness: string;
     ax_weight: string;
+    manufacturer_name?: string;
   };
 }
 
@@ -69,6 +70,7 @@ export default function Page() {
       ax_weight: "",
     },
   });
+  const [manufacturerName, setManufacturerName] = useState<any>("");
   const [decodedName, setDecodedName] = useState<any>(<span></span>);
   const [decodedDesc, setDecodedDesc] = useState<any>(<span></span>);
   async function getPostData() {
@@ -83,6 +85,26 @@ export default function Page() {
       console.log(error);
     }
   }
+  console.log(manufacturerName);
+  async function getManfacturerData(manufacturerId: number) {
+    try {
+      const response = await fetch(
+        `https://nozhtoporshop.na4u.ru/wp-json/wp/v2/manufacturers?acf_format=standard&_fields=id,name,acf&include=${manufacturerId}`
+      );
+      const data = await response.json();
+      console.log(data);
+      setManufacturerName(data[0].name);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    if (!productData.acf.manufacturer_id) return;
+    getManfacturerData(productData.acf.manufacturer_id);
+  }, [productData]);
+
   useEffect(() => {
     getPostData();
   }, []);
@@ -115,7 +137,7 @@ export default function Page() {
       <div className={styles["body"]}>
         <Navigation />
         <div className={styles["wrapper"]}>
-          {productData && (
+          {productData && manufacturerName && (
             <div className={styles["hero-container"]}>
               <ImageGalleryComponent data={productData} />
               <div className={styles["description-block"]}>
@@ -123,7 +145,10 @@ export default function Page() {
                 <p className={styles["p-under-h1"]}>
                   {productData?.acf?.short_description}
                 </p>
-                <ProductDescription data={productData} />
+                <ProductDescription
+                  data={productData}
+                  manufacturerName={manufacturerName}
+                />
               </div>
             </div>
           )}

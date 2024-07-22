@@ -2,7 +2,13 @@ import React from "react";
 import { IProduct } from "../../page";
 import styles from "./style.module.css";
 
-export function ProductDescription({ data }: { data: IProduct }) {
+export function ProductDescription({
+  data,
+  manufacturerName,
+}: {
+  data: IProduct;
+  manufacturerName: string;
+}) {
   return (
     <div className={styles["body"]}>
       {data.acf.product_steel && (
@@ -59,6 +65,11 @@ export function ProductDescription({ data }: { data: IProduct }) {
       {data.acf.ax_weight && (
         <div className={styles["description-row"]}>
           <p>Вес топора</p> <p>{data.acf.ax_weight}</p>
+        </div>
+      )}
+      {manufacturerName && (
+        <div className={styles["description-row"]}>
+          <p>Производитель</p> <p>{manufacturerName}</p>
         </div>
       )}
     </div>

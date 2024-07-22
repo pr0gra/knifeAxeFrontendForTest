@@ -181,10 +181,6 @@ button {
   font-size: 15px !important;
 }
 
-* {
-  transition: 0.2s all;
-}
-
 .image-gallery-svg {
   height: 30px !important;
 }

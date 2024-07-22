@@ -63,6 +63,25 @@
   display: flex;
   gap: 9px;
   align-items: center;
+  position: relative;
+}
+
+.tooltip-cart{
+  white-space: nowrap;
+  position: absolute;
+  background: #4b4a4a;
+  bottom: 30px;
+  right: -60px;
+  padding: 5px 10px;
+}
+
+.tooltip-heart {
+  white-space: nowrap;
+  position: absolute;
+  background: #4b4a4a;
+  bottom: 30px;
+  right: -60px;
+  padding: 5px 10px;
 }
 
 .p-price {

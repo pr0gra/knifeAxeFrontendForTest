@@ -56,6 +56,8 @@ export default function ProductBox({
       ? lsDataFavourite.find((x: any) => x.id === product.id)
       : false
   );
+  const [showFavoriteTooltip, setShowFavoriteTooltip] = useState(false);
+  const [showCartTooltip, setShowCartTooltip] = useState(false);
 
   const element = document.createElement("p");
   element.innerHTML = product.name;
@@ -101,7 +103,6 @@ export default function ProductBox({
     setIsAddedToCart((prev: boolean) => !prev);
   };
 
-
   return (
     <div className={styles["product-box"]}>
       <Link href={`/ProductCard/${product.id}`}>
@@ -124,8 +125,38 @@ export default function ProductBox({
       <div className={styles["price-and-icons-container"]}>
         <p className={styles["p-price"]}>{product.price} руб.</p>
         <div className={styles["buttons-container"]}>
-          <button onClick={handleAddToFavourite}>
+          {showFavoriteTooltip && (
+            <div style={{right: showFavoriteTooltip ? "0" : "-50px"}} className={styles["tooltip-heart"]}>
+              {isAddedToFavourite ? (
+                <p>Добавлено</p>
+              ) : (
+                <p>Добавить в избранное</p>
+              )}
+            </div>
+          )}
+
+          {showCartTooltip && (
+            <div className={styles["tooltip-cart"]}>
+              {" "}
+              {isAddedToCart ? (
+                <p>Добавлено</p>
+              ) : (
+                <p>Добавить в корзину</p>
+              )}
+            </div>
+          )}
+          <button
+            onMouseEnter={() => {
+              setShowFavoriteTooltip(true);
+            }}
+            onMouseLeave={() => {
+              setShowFavoriteTooltip(false);
+            }}
+            className={styles["heart"]}
+            onClick={handleAddToFavourite}
+          >
             <Image
+              id="heart"
               style={{ opacity: isAddedToFavourite ? "0.5" : "1" }}
               src={heart}
               alt="heart"
@@ -134,8 +165,19 @@ export default function ProductBox({
               className={styles["mini-icon"]}
             />
           </button>
-          <button onClick={handleAddToCart}>
+
+          <button
+            onMouseEnter={() => {
+              setShowCartTooltip(true);
+            }}
+            onMouseLeave={() => {
+              setShowCartTooltip(false);
+            }}
+            className={styles["cart"]}
+            onClick={handleAddToCart}
+          >
             <Image
+              id="cart"
               style={{ opacity: isAddedToCart ? "0.5" : "1" }}
               src={cart}
               alt="cart"
