@@ -101,8 +101,8 @@
 
 .chat-feedback {
   position: fixed;
-  right: 25px;
-  bottom: 25px;
+  right: 45px;
+  bottom: 45px;
   z-index: 3;
 }
 
