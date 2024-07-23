@@ -145,4 +145,7 @@
     gap: 16px;
     flex-direction: column;
   }
+  .contact-social-media-container{
+    align-items: center;
+  }
 }

@@ -38,8 +38,8 @@ export default function Footer() {
               alt="logo"
             />
             <div className={styles["description"]}>
-              <p>Lorem, ipsum.</p>
-              <p>Lorem, ipsum.</p>
+              <Link href="/files/privacy-policy.pdf"  style={{textDecoration: "underline"}} className="link">Политика конфиденциальности</Link>
+       
             </div>
           </div>
           <div className={styles["nav"]}>
