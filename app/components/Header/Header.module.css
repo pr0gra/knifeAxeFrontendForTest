@@ -40,7 +40,6 @@
 .location-container {
   display: flex;
   align-items: center;
-
   gap: 5px;
   grid-column-start: 1;
   grid-column-end: 2;
@@ -103,7 +102,7 @@
   position: fixed;
   right: 45px;
   bottom: 45px;
-  z-index: 3;
+  z-index: 1000;
 }
 
 .chat-feedback-line{
@@ -116,8 +115,8 @@
 
 @media (max-width: 1350px) {
   .site-logo {
-    width: 70px;
-    height: 40px;
+    width: 150px;
+    height: 45px;
   }
 
   .location-img {
@@ -198,6 +197,15 @@
     width: 10px;
   }
 
+  .location-container{
+    width: 150px;
+   
+  }
+
+  .location-container p{
+    text-align: left;
+  }
+
   .burger-menu {
     grid-column: 3;
     grid-row: 2;
@@ -254,5 +262,12 @@
 
   .panel-container {
     display: none;
+  }
+}
+
+@media(max-width:768px) {
+  .location-container{
+    width: 120px;
+   
   }
 }

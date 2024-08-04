@@ -21,9 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body style={{ backgroundColor: "#1F1F1F" }} className={inter.className}>
         <Header />
-        
-
-     {children}
+        {children}
         <Footer />
       </body>
     </html>
