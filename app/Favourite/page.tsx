@@ -17,7 +17,7 @@ export default function Page() {
       <div className={styles["wrapper"]}>
         <Navigation />
         <h1 className={styles["h1"]}>Избранные товары</h1>
-        {favouriteData.length === 0 && (
+        {(!favouriteData || favouriteData.length === 0) && (
           <p className={styles["p"]}>
             Здесь будут товары, которые вы добавите в избранное
           </p>

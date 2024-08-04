@@ -113,7 +113,7 @@ export default function Page() {
       <div className={styles["container"]}>
         <div className={styles["wrapper"]}>
           <Navigation />
-          {cartData.length > 0 ? (
+          {cartData && cartData.length > 0 ? (
             <>
               <h3 className={styles["h1"]}>Оформление заказа</h3>
               <div className={styles["th-cart"]}>
