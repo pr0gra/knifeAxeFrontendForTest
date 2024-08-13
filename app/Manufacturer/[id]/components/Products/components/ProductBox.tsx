@@ -184,6 +184,7 @@ export default function ProductBox({
               width={17}
               height={17}
               className={styles["mini-icon"]}
+              unoptimized
             />
           </button>
         </div>
