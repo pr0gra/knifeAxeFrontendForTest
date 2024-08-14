@@ -16,6 +16,7 @@ export function NewsBlock({ data }: any) {
         alt="News Block Image"
         width={0}
         height={0}
+        unoptimized
       />
 
       <div className={styles["description-container"]}>

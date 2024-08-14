@@ -107,6 +107,7 @@ export default function ProductBox({
     <div className={styles["product-box"]}>
       <Link href={`/ProductCard/${product.id}`}>
         <Image
+        unoptimized
           src={product.images[0].src}
           alt="emptyImg"
           width={164}

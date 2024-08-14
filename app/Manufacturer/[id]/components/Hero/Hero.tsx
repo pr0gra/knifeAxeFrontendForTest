@@ -27,6 +27,7 @@ export function Hero() {
   return (
     <div className={styles["hero"]}>
       <Image
+      unoptimized
         src={heroData[0]?.acf?.manufacturer_img}
         width={540}
         height={517}

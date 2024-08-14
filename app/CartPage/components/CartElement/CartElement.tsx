@@ -42,6 +42,7 @@ export function CartElement({
   return (
     <div className={styles["container"]}>
       <Image
+      unoptimized
         src={data.images[0].src ? data.images[0].src : emptyImg}
         width={263}
         height={212}

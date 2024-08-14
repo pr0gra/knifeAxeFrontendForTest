@@ -48,6 +48,7 @@ export function Manufacturers() {
                 href={`/Manufacturer/${manufacturerData.id}`}
               >
                 <Image
+                unoptimized
                   className={styles["img"]}
                   width={218}
                   height={216}

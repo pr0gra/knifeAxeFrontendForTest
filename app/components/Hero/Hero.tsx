@@ -46,6 +46,7 @@ export function Hero() {
               <SwiperSlide className={styles['swiper-slider-container']} key={index}>
                 <div className={styles["slider-container"]}>
                   <Image
+                  unoptimized
                     className={styles["image"]}
                     width={300}
                     height={300}

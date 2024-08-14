@@ -64,6 +64,7 @@ export function News() {
                   key={index}
                 >
                   <Image
+                  unoptimized
                     className={styles["main-img"]}
                     width={180}
                     height={180}
