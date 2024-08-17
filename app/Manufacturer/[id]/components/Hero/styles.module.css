@@ -24,7 +24,7 @@
 .hero-img {
   width: clamp(170px, 30vw, 236px);
   height: clamp(149px, 30vw, 224px);
-  z-index: 100;
+  z-index: 9;
 }
 
 .hero-description {
