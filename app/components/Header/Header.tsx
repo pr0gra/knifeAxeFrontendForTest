@@ -44,6 +44,7 @@ export function Header() {
             width={280}
             height={81}
             src={headerData.site_logo}
+            unoptimized
             alt="logo"
           />
         </Link>
